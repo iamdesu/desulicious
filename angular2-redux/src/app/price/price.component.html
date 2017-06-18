@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Price</div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let f of foods | async">
+          <td>{{ f.id }}</td>
+          <td>{{ f.name }}</td>
+          <td>{{ f.price }}</td>
+          <td align="right"><button type="button" class="btn btn-xs btn-danger" (click)="removeFood(f)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div>
+  <h2>Total {{ totalPrice | async | currency:'USD':true:'1.2-2' }}</h2>
+</div>

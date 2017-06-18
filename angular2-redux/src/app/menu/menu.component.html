@@ -1,0 +1,17 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">Menu</div>
+  <div class="panel-body">
+    <div class="col-xs-6" *ngFor="let m of menu">
+      <img 
+        data-src="holder.js/200x200"
+        class="img-thumbnail"
+          alt="200x200"
+          style="width: 200px; height: 200px; cursor:pointer"
+          src="{{ m.image }}"
+          data-holder-rendered="true"
+          (click)="addFood(m)"
+      >
+      <p>{{ m.name }} <i>{{ m.price | currency:'USD':true:'1.2-2' }}</i></p>
+    </div>
+  </div>
+</div>
